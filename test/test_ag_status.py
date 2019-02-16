@@ -1,6 +1,6 @@
 import unittest
 
-from src.ag_status import AGStatus
+from lsm9ds1_python.ag_status import AGStatus
 
 
 class AGStatusTest(unittest.TestCase):

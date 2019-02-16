@@ -1,12 +1,13 @@
 import unittest
 from unittest.mock import patch, MagicMock
 
-from src import Driver, AbstractTransport
+from lsm9ds1_python.driver import Driver
+from lsm9ds1_python.abstract_transport import AbstractTransport
 
 
 class DriverTest(unittest.TestCase):
-    @patch('src.AbstractTransport')
-    @patch('src.AbstractTransport')
+    @patch('lsm9ds1_python.abstract_transport.AbstractTransport')
+    @patch('lsm9ds1_python.abstract_transport.AbstractTransport')
     def test_ag_data_ready(self, mock_ag: AbstractTransport, mock_mag: AbstractTransport):
         mock_ag.data_ready = MagicMock(return_value=False)
         d = Driver(mock_ag, mock_mag)
@@ -16,8 +17,8 @@ class DriverTest(unittest.TestCase):
         mock_ag.data_ready.assert_called_once_with(123)
         self.assertFalse(result)
 
-    @patch('src.AbstractTransport')
-    @patch('src.AbstractTransport')
+    @patch('lsm9ds1_python.abstract_transport.AbstractTransport')
+    @patch('lsm9ds1_python.abstract_transport.AbstractTransport')
     def test_read_ag_status(self, mock_ag: AbstractTransport, mock_mag: AbstractTransport):
         mock_ag.read_byte = MagicMock(return_value=0xA2)
         d = Driver(mock_ag, mock_mag)
@@ -27,8 +28,8 @@ class DriverTest(unittest.TestCase):
         mock_ag.read_byte.assert_called_once_with(0x17)
         self.assertEqual(0xA2, status.status)
 
-    @patch('src.AbstractTransport')
-    @patch('src.AbstractTransport')
+    @patch('lsm9ds1_python.abstract_transport.AbstractTransport')
+    @patch('lsm9ds1_python.abstract_transport.AbstractTransport')
     def test_read_temperature(self, mock_ag: AbstractTransport, mock_mag: AbstractTransport):
         mock_ag.read_bytes = MagicMock(return_value=bytes([0x01, 0x80]))
         d = Driver(mock_ag, mock_mag)
@@ -38,8 +39,8 @@ class DriverTest(unittest.TestCase):
         mock_ag.read_bytes.assert_called_once_with(0x15, 2)
         self.assertEqual(-32767, temp)
 
-    @patch('src.AbstractTransport')
-    @patch('src.AbstractTransport')
+    @patch('lsm9ds1_python.abstract_transport.AbstractTransport')
+    @patch('lsm9ds1_python.abstract_transport.AbstractTransport')
     def test_read_read_acceleration(self, mock_ag: AbstractTransport, mock_mag: AbstractTransport):
         mock_ag.read_bytes = MagicMock(return_value=bytes([0xFF, 0x7F, 0x01, 0x80, 0xFF, 0x00]))
         d = Driver(mock_ag, mock_mag)
@@ -51,8 +52,8 @@ class DriverTest(unittest.TestCase):
         # so that all 3 sensors use the right-hand rule and the same signs.
         self.assertEqual([-32767, -32767, 255], result)
 
-    @patch('src.AbstractTransport')
-    @patch('src.AbstractTransport')
+    @patch('lsm9ds1_python.abstract_transport.AbstractTransport')
+    @patch('lsm9ds1_python.abstract_transport.AbstractTransport')
     def test_read_read_gyroscope(self, mock_ag: AbstractTransport, mock_mag: AbstractTransport):
         mock_ag.read_bytes = MagicMock(return_value=bytes([0xFF, 0x7F, 0x01, 0x80, 0xFF, 0x00]))
         d = Driver(mock_ag, mock_mag)
@@ -64,8 +65,8 @@ class DriverTest(unittest.TestCase):
         # so that all 3 sensors use the right-hand rule and the same signs.
         self.assertEqual([-32767, -32767, 255], result)
 
-    @patch('src.AbstractTransport')
-    @patch('src.AbstractTransport')
+    @patch('lsm9ds1_python.abstract_transport.AbstractTransport')
+    @patch('lsm9ds1_python.abstract_transport.AbstractTransport')
     def test_read_ag_data(self, mock_ag: AbstractTransport, mock_mag: AbstractTransport):
         mock_ag.read_bytes = MagicMock(return_value=bytes([
             0xFF, 0x00,
@@ -83,8 +84,8 @@ class DriverTest(unittest.TestCase):
         self.assertEqual([-1000, 2500, 27000], acc)
         self.assertEqual([-32767, -32767, 255], gyro)
 
-    @patch('src.AbstractTransport')
-    @patch('src.AbstractTransport')
+    @patch('lsm9ds1_python.abstract_transport.AbstractTransport')
+    @patch('lsm9ds1_python.abstract_transport.AbstractTransport')
     def test_magnetometer_data_ready(self, mock_ag: AbstractTransport, mock_mag: AbstractTransport):
         mock_mag.data_ready = MagicMock(return_value=True)
         d = Driver(mock_ag, mock_mag)
@@ -94,8 +95,8 @@ class DriverTest(unittest.TestCase):
         mock_mag.data_ready.assert_called_once_with(123)
         self.assertTrue(result)
 
-    @patch('src.AbstractTransport')
-    @patch('src.AbstractTransport')
+    @patch('lsm9ds1_python.abstract_transport.AbstractTransport')
+    @patch('lsm9ds1_python.abstract_transport.AbstractTransport')
     def test_read_magnetometer_status(self, mock_ag: AbstractTransport, mock_mag: AbstractTransport):
         mock_mag.read_byte = MagicMock(return_value=0xA2)
         d = Driver(mock_ag, mock_mag)
@@ -105,8 +106,8 @@ class DriverTest(unittest.TestCase):
         mock_mag.read_byte.assert_called_once_with(0x27)
         self.assertEqual(0xA2, status.status)
 
-    @patch('src.AbstractTransport')
-    @patch('src.AbstractTransport')
+    @patch('lsm9ds1_python.abstract_transport.AbstractTransport')
+    @patch('lsm9ds1_python.abstract_transport.AbstractTransport')
     def test_read_magnetometer(self, mock_ag: AbstractTransport, mock_mag: AbstractTransport):
         mock_mag.read_bytes = MagicMock(return_value=bytes([0xFF, 0x7F, 0x01, 0x80, 0xFF, 0x00]))
         d = Driver(mock_ag, mock_mag)

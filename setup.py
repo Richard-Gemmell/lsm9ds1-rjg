@@ -12,12 +12,17 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Richard-Gemmell/lsm9ds1-python",
+    license="LICENSE.txt",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-        "TOPIC :: SOFTWARE DEVELOPMENT :: EMBEDDED SYSTEMS",
-        "TOPIC :: SYSTEM :: HARDWARE :: HARDWARE DRIVERS"
+        "Topic :: Software Development :: Embedded Systems",
+        "Topic :: System :: Hardware :: Hardware Drivers"
     ],
+    install_requires=[
+        "smbus2 >= 0.2",
+        "spidev >= 3.2"
+    ]
 )

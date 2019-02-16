@@ -2,10 +2,9 @@ import os
 import time
 from typing import Tuple, List
 
-from src.abstract_transport import AbstractTransport
-from src.ag_status import AGStatus
-from src.magnetometer_status import MagnetometerStatus
-
+from .abstract_transport import AbstractTransport
+from .ag_status import AGStatus
+from .magnetometer_status import MagnetometerStatus
 
 class Driver:
     AG_ID = 0b01101000

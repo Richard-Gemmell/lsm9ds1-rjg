@@ -3,8 +3,8 @@ from typing import List
 from smbus2 import SMBusWrapper
 
 
-from src.abstract_transport import AbstractTransport
-from src.gpio_interrupt import GPIOInterrupt
+from .abstract_transport import AbstractTransport
+from .gpio_interrupt import GPIOInterrupt
 
 
 class I2CTransport(AbstractTransport):

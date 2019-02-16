@@ -2,7 +2,7 @@ import time
 
 from RPi import GPIO
 
-from src.abstract_interrupt import Interrupt
+from .abstract_interrupt import Interrupt
 
 
 class GPIOInterrupt(Interrupt):
