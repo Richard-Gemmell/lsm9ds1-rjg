@@ -29,5 +29,5 @@ This provides plausible looking but incorrect data. You _must_ wait for data rea
 before reading the sensor values. See the examples.
 
 ## Examples
-* [Simple Example](https://github.com/Richard-Gemmell/lsm9ds1-rjg/examples/simple.py)
-* [Using a hardware interrupt](https://github.com/Richard-Gemmell/lsm9ds1-rjg/examples/hardware_data_ready.py)
+* [Simple Example](https://github.com/Richard-Gemmell/lsm9ds1-rjg/blob/master/examples/simple.py)
+* [Using a hardware interrupt](https://github.com/Richard-Gemmell/lsm9ds1-rjg/blob/master/examples/hardware_data_ready.py)

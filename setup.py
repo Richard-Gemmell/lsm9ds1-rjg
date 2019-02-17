@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="lsm9ds1-rjg",
-    version="0.9.1",
+    version="0.9.2",
     author="Richard Gemmell",
     author_email="16683467+Richard-Gemmell@users.noreply.github.com",
     description="A python module to enable a Raspberry Pi to access an LSM9DS1 IMU sensor.",
