@@ -1,4 +1,4 @@
-# lsm9ds1-python
+# lsm9ds1-rjg
 ## Introduction
 This is a device driver that enables a Raspberry Pi to access an LSM9DS1 IMU sensor.
 
@@ -27,3 +27,7 @@ If you don't check for data ready and just read data then you will miss some sam
 Worse than that, in some cases you'll read part of one sample and part of the next.
 This provides plausible looking but incorrect data. You _must_ wait for data ready
 before reading the sensor values. See the examples.
+
+## Examples
+* [Simple Example](https://github.com/Richard-Gemmell/lsm9ds1-rjg/examples/simple.py)
+* [Using a hardware interrupt](https://github.com/Richard-Gemmell/lsm9ds1-rjg/examples/hardware_data_ready.py)

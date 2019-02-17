@@ -6,6 +6,7 @@ from .abstract_transport import AbstractTransport
 from .ag_status import AGStatus
 from .magnetometer_status import MagnetometerStatus
 
+
 class Driver:
     AG_ID = 0b01101000
     MAG_ID = 0b00111101

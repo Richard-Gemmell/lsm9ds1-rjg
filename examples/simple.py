@@ -2,7 +2,7 @@ import sys, os
 import time
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-from lsm9ds1_python import Driver, I2CTransport, SPITransport
+from lsm9ds1_rjg import Driver, I2CTransport, SPITransport
 
 
 class SimpleExample:

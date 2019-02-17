@@ -21,7 +21,7 @@ To test
 Installing in Consuming Environment
 -----------------------------------
 From Live PyPi
-    python3 -m pip install lsm9ds1-python
+    sudo pip3 install lsm9ds1-rjg
 
 From Test PyPi
-    python3 -m pip install --index-url https://test.pypi.org/simple/ lsm9ds1-python
+    sudo pip3 --index-url https://test.pypi.org/simple/ lsm9ds1-rjg

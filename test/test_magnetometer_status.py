@@ -1,6 +1,6 @@
 import unittest
 
-from lsm9ds1_python.magnetometer_status import MagnetometerStatus
+from lsm9ds1_rjg.magnetometer_status import MagnetometerStatus
 
 
 class MagnetometerStatusTest(unittest.TestCase):
