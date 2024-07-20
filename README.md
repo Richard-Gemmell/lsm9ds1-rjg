@@ -31,3 +31,9 @@ before reading the sensor values. See the examples.
 ## Examples
 * [Simple Example](https://github.com/Richard-Gemmell/lsm9ds1-rjg/blob/master/examples/simple.py)
 * [Using a hardware interrupt](https://github.com/Richard-Gemmell/lsm9ds1-rjg/blob/master/examples/hardware_data_ready.py)
+
+## Known Issues
+
+This library depends on [smbus2](https://github.com/kplindegaard/smbus2/blob/master/CHANGELOG.md)
+which introduced a breaking change in version `0.4.0`. Please upgrade `smbus2`
+or install [v0.9.2](https://pypi.org/project/lsm9ds1-rjg/0.9.2/) of this library.

@@ -5,7 +5,7 @@ from lsm9ds1_rjg import Driver, I2CTransport, SPITransport
 
 
 class HardwareDataReady:
-    PIN_INT1_AG = 23
+    PIN_INT1_AG = 25
 
     """This example shows how to use a GPIO pin connected to INT_1
     to find out when there is new data to read."""

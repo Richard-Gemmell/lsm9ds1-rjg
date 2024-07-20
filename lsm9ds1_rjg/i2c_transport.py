@@ -1,6 +1,6 @@
 from typing import List
 
-from smbus2 import SMBusWrapper
+from smbus2 import SMBus
 
 
 from .abstract_transport import AbstractTransport
@@ -25,16 +25,16 @@ class I2CTransport(AbstractTransport):
             self.data_ready_interrupt.close()
 
     def write_byte(self, address: int, value: int):
-        with SMBusWrapper(self.port) as bus:
+        with SMBus(self.port) as bus:
             bus.write_byte_data(self.i2c_device, address, value)
 
     def read_byte(self, address: int) -> int:
-        with SMBusWrapper(self.port) as bus:
+        with SMBus(self.port) as bus:
             bus.write_byte(self.i2c_device, address)
             return bus.read_byte(self.i2c_device)
 
     def read_bytes(self, address: int, length: int) -> List[int]:
-        with SMBusWrapper(self.port) as bus:
+        with SMBus(self.port) as bus:
             bus.write_byte(self.i2c_device, address)
             result = bus.read_i2c_block_data(self.i2c_device, address, length)
             return result

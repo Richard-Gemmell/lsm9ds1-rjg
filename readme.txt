@@ -9,10 +9,13 @@ python3 -m pip install --upgrade twine
 
 Build Deployment
 ----------------
+rm dist/*
 python3 setup.py sdist bdist_wheel
 
 Upload to PyPi
 --------------
+Note that twine complains about a missing keyring backend. You can ignore this.
+
 To live
     python3 -m twine upload dist/*
 To test
@@ -21,7 +24,7 @@ To test
 Installing in Consuming Environment
 -----------------------------------
 From Live PyPi
-    sudo pip3 install lsm9ds1-rjg
+    pip3 install lsm9ds1-rjg
 
 From Test PyPi
-    sudo pip3 --index-url https://test.pypi.org/simple/ lsm9ds1-rjg
+    pip3 install--index-url https://test.pypi.org/simple/ lsm9ds1-rjg
