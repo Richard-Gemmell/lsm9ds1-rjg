@@ -53,8 +53,8 @@ class Driver:
         # self.ag.write_byte(Register.CTRL_REG3_G, 0x45)
         ###################################################
         # Set up Accelerometer
-        # 0xC0 - Set to +- 2G, 119 Hz ODR, 50 Hz BW (Frequency is ignored if Gryo is enabled)
-        # 0x87 - Set to +- 2G, 238 Hz ODR, 50 Hz BW (Frequency is ignored if Gryo is enabled)
+        # 0xC0 - Set to +- 2G, 119 Hz ODR, 50 Hz BW (Frequency is ignored if Gyro is enabled)
+        # 0x87 - Set to +- 2G, 238 Hz ODR, 50 Hz BW (Frequency is ignored if Gyro is enabled)
         self.ag.write_byte(Register.CTRL_REG6_XL, 0x87)
         # 0x01 INT1_A/G pin set by accelerometer data ready
         self.ag.write_byte(Register.INT1_CTRL, 0x01)

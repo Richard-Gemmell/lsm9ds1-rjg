@@ -42,7 +42,7 @@ class SimpleExample:
 
     def read_ag(self):
         temp, acc, gyro = self.driver.read_ag_data()
-        print('Temp:{} Acc:{} Gryo:{}'.format(temp, acc, gyro))
+        print('Temp:{} Acc:{} Gyro:{}'.format(temp, acc, gyro))
 
     def read_magnetometer(self):
         mag = self.driver.read_magnetometer()
